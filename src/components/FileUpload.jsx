@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { usePDF } from '../contexts/PDFContext';
+import React, { useRef, useState } from "react";
+import { usePDF } from "../contexts/PDFContext";
 
 export default function FileUpload() {
   const { loadPDF, isLoading, error } = usePDF();
@@ -7,7 +7,7 @@ export default function FileUpload() {
   const [isDragOver, setIsDragOver] = useState(false);
 
   const handleFileSelect = async (file) => {
-    if (file && file.type === 'application/pdf') {
+    if (file && file.type === "application/pdf") {
       await loadPDF(file);
     }
   };
@@ -43,8 +43,8 @@ export default function FileUpload() {
       <div
         className={`border-3 border-dashed rounded-xl p-16 text-center cursor-pointer transition-all duration-300 ${
           isDragOver
-            ? 'border-primary-500 bg-primary-50 transform scale-105'
-            : 'border-gray-300 bg-gray-50 hover:border-primary-500 hover:bg-primary-50'
+            ? "border-primary-500 bg-primary-50 transform scale-105"
+            : "border-gray-300 bg-gray-50 hover:border-primary-500 hover:bg-primary-50"
         }`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
@@ -58,7 +58,7 @@ export default function FileUpload() {
           onChange={handleFileInput}
           className="hidden"
         />
-        
+
         {isLoading ? (
           <div className="text-gray-600">
             <div className="loading mx-auto mb-4 w-8 h-8 border-4"></div>
@@ -83,11 +83,11 @@ export default function FileUpload() {
               <line x1="16" y1="17" x2="8" y2="17" />
               <polyline points="10,9 9,9 8,9" />
             </svg>
-            <p className="text-lg mb-2">Click to upload a PDF file or drag and drop</p>
+            <p className="text-lg mb-2">
+              Click to upload a PDF file or drag and drop
+            </p>
             {error && (
-              <p className="text-red-500 text-sm mt-2">
-                Error: {error}
-              </p>
+              <p className="text-red-500 text-sm mt-2">Error: {error}</p>
             )}
           </div>
         )}

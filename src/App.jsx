@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
-import { PDFProvider, usePDF } from './contexts/PDFContext';
-import Header from './components/Header';
-import FileUpload from './components/FileUpload';
-import PDFToolbar from './components/PDFToolbar';
-import PDFViewer from './components/PDFViewer';
+import React, { useEffect } from "react";
+import { PDFProvider, usePDF } from "./contexts/PDFContext";
+import Header from "./components/Header";
+import FileUpload from "./components/FileUpload";
+import PDFToolbar from "./components/PDFToolbar";
+import PDFViewer from "./components/PDFViewer";
 
 function AppContent() {
-  const { pdfDoc, setPage, setScale, currentPage, totalPages, scale } = usePDF();
+  const { pdfDoc, setPage, setScale, currentPage, totalPages, scale } =
+    usePDF();
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -14,24 +15,24 @@ function AppContent() {
       if (!pdfDoc) return;
 
       switch (e.key) {
-        case 'ArrowLeft':
+        case "ArrowLeft":
           e.preventDefault();
           if (currentPage > 1) {
             setPage(currentPage - 1);
           }
           break;
-        case 'ArrowRight':
+        case "ArrowRight":
           e.preventDefault();
           if (currentPage < totalPages) {
             setPage(currentPage + 1);
           }
           break;
-        case '+':
-        case '=':
+        case "+":
+        case "=":
           e.preventDefault();
           setScale(Math.min(scale * 1.2, 3.0));
           break;
-        case '-':
+        case "-":
           e.preventDefault();
           setScale(Math.max(scale / 1.2, 0.5));
           break;
@@ -40,15 +41,15 @@ function AppContent() {
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [pdfDoc, currentPage, totalPages, scale, setPage, setScale]);
 
   return (
     <div className="min-h-screen p-5">
       <div className="max-w-6xl mx-auto">
         <Header />
-        
+
         <main>
           {!pdfDoc ? (
             <FileUpload />

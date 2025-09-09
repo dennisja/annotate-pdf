@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function AnnotationModal({
   isOpen,
@@ -7,7 +7,7 @@ export default function AnnotationModal({
   annotation = null,
   defaultFontSize = 12,
 }) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [fontSize, setFontSize] = useState(defaultFontSize);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function AnnotationModal({
         setFontSize(annotation.fontSize || 12);
       } else {
         // Creating new annotation
-        setText('');
+        setText("");
         setFontSize(defaultFontSize);
       }
     }
@@ -33,9 +33,9 @@ export default function AnnotationModal({
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       onClose();
-    } else if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+    } else if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
       handleSubmit(e);
     }
   };
@@ -49,9 +49,9 @@ export default function AnnotationModal({
     >
       <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6">
         <h3 className="text-xl font-bold text-gray-800 mb-4">
-          {annotation ? 'Edit Text Annotation' : 'Add Text Annotation'}
+          {annotation ? "Edit Text Annotation" : "Add Text Annotation"}
         </h3>
-        
+
         <form onSubmit={handleSubmit}>
           <textarea
             value={text}
@@ -63,7 +63,7 @@ export default function AnnotationModal({
                      focus:outline-none focus:border-primary-500 transition-colors"
             autoFocus
           />
-          
+
           <div className="flex items-center gap-3 mb-6">
             <label htmlFor="fontSize" className="font-semibold text-gray-700">
               Font Size:
@@ -85,7 +85,7 @@ export default function AnnotationModal({
               <option value="24">24pt</option>
             </select>
           </div>
-          
+
           <div className="flex gap-3 justify-end">
             <button
               type="button"
@@ -99,7 +99,7 @@ export default function AnnotationModal({
               disabled={!text.trim()}
               className="btn btn-primary"
             >
-              {annotation ? 'Update' : 'Add'}
+              {annotation ? "Update" : "Add"}
             </button>
           </div>
         </form>

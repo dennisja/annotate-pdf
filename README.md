@@ -5,6 +5,7 @@ A modern, React-based PDF annotation tool built with Vite and Tailwind CSS. Add 
 ## 🚀 Features
 
 ✨ **Core Functionality**
+
 - Upload PDF files via drag & drop or click
 - Click anywhere on PDF to add text annotations
 - Drag annotations to reposition them
@@ -13,6 +14,7 @@ A modern, React-based PDF annotation tool built with Vite and Tailwind CSS. Add 
 - Save annotated PDFs with embedded text
 
 🎛️ **Navigation & Controls**
+
 - Navigate between pages with Previous/Next buttons
 - Zoom in/out functionality with mouse or keyboard
 - Keyboard shortcuts for navigation
@@ -20,6 +22,7 @@ A modern, React-based PDF annotation tool built with Vite and Tailwind CSS. Add 
 - Font size control (8pt - 24pt)
 
 💫 **User Experience**
+
 - Modern React architecture with hooks
 - Responsive design with Tailwind CSS
 - Smooth animations and transitions
@@ -71,32 +74,38 @@ src/
 ## 🎯 Component Architecture
 
 ### **PDFContext**
+
 - Centralized state management for PDF data
 - Handles PDF loading, annotation CRUD operations
 - Provides hooks for components to access PDF state
 
 ### **Header**
+
 - Save and clear annotation controls
 - Loading states and error handling
 - Action buttons with proper disabled states
 
 ### **FileUpload**
+
 - Drag & drop file upload interface
 - File validation and error display
 - Loading state during PDF processing
 
 ### **PDFToolbar**
+
 - Page navigation controls
 - Zoom controls
 - Default font size selector
 
 ### **PDFViewer**
+
 - PDF rendering with PDF.js
 - Annotation overlay system
 - Click-to-add annotation functionality
 - Drag-to-move annotations
 
 ### **AnnotationModal**
+
 - Unified modal for creating and editing
 - Font size selection
 - Keyboard shortcuts (Escape to cancel, Ctrl/Cmd+Enter to save)
@@ -120,6 +129,7 @@ src/
 ## 🎨 Styling
 
 Built with Tailwind CSS featuring:
+
 - **Gradient backgrounds** - Beautiful purple/blue gradients
 - **Glass morphism** - Backdrop blur effects on panels
 - **Smooth animations** - Hover effects and transitions
